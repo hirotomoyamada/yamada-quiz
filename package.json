@@ -13,6 +13,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@yamada-ui/react": "2.0.0-dev-20250902143244",
     "next": "^15.5.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
@@ -22,6 +23,7 @@
     "@types/node": "^24.3.0",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "@yamada-ui/cli": "2.0.0-dev-20250902143244",
     "eslint": "^9.34.0",
     "eslint-config-next": "15.5.2",
     "typescript": "^5.9.2"
