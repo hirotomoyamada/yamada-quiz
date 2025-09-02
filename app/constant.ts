@@ -23,8 +23,8 @@ export const quizzes: Quizzes = {
       choices: [
         { id: 1, label: 'コカ・コーラ' },
         { id: 2, label: 'ファンタグレープ' },
-        { id: 2, label: 'スプライト' },
-        { id: 2, label: 'ファンタメロン' },
+        { id: 3, label: 'スプライト' },
+        { id: 4, label: 'ファンタメロン' },
       ],
       answer: 2,
     },
