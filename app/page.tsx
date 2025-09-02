@@ -14,7 +14,7 @@ import {
   XIcon,
 } from '@yamada-ui/react';
 import { useRef, useState } from 'react';
-import { Quiz, quizzes, scores } from './constant';
+import { getScoreColor, Quiz, quizzes, scores } from './constant';
 
 function randomSort<Y>(array: Y[]) {
   return array.sort(() => 0.5 - Math.random());
@@ -55,13 +55,7 @@ export default function Page() {
       <>
         <Center
           borderWidth='3px'
-          borderColor={
-            score >= 16
-              ? 'success.emphasized'
-              : score >= 8
-                ? 'warning.emphasized'
-                : 'error.emphasized'
-          }
+          borderColor={getScoreColor(score)}
           borderRadius='l3'
           p='md'
           w='full'
@@ -123,7 +117,8 @@ export default function Page() {
             {({ id, label }, index) => (
               <Button
                 key={`${currentIndex}-${index}`}
-                minW='full'
+                w='full'
+                maxW='lg'
                 _hover={{ bg: 'colorScheme.solid' }}
                 onClick={() => {
                   answers.current[currentIndex] = id;

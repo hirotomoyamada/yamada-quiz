@@ -332,3 +332,10 @@ export const scores = {
   16: '山田の彼女',
   20: '山田の奥さん',
 };
+
+export const getScoreColor = (score: number) => {
+  if (score >= 16) return 'success.emphasized';
+  if (score >= 8) return 'warning.emphasized';
+
+  return 'error.emphasized';
+};
