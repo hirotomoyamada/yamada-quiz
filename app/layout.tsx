@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 
-const config = merge(defaultConfig, { defaultColorMode: 'system' });
+const config = merge(defaultConfig, { defaultColorMode: 'light' });
 
 const _inter = Inter({
   style: 'normal',
@@ -27,7 +27,7 @@ export default function RootLayout({
         <ColorModeScript />
 
         <UIProvider config={config}>
-          <Center p='lg' minH='100dvh'>
+          <Center flexDirection='column' gap='lg' p='lg' minH='100dvh'>
             {children}
           </Center>
         </UIProvider>
