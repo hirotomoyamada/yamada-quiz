@@ -326,16 +326,16 @@ export const quizzes: Quizzes = {
 };
 
 export const scores = {
-  4: 'ゴミ',
-  8: '山田の知り合い',
-  12: '山田のお気に入り',
-  16: '山田の彼女',
+  12: 'ゴミ',
+  14: '山田の知り合い',
+  16: '山田のお気に入り',
+  18: '山田の彼女',
   20: '山田の奥さん',
 };
 
 export const getScoreColor = (score: number) => {
-  if (score >= 16) return 'success.emphasized';
-  if (score >= 8) return 'warning.emphasized';
+  if (score >= 18) return 'success.emphasized';
+  if (score >= 14) return 'warning.emphasized';
 
   return 'error.emphasized';
 };
