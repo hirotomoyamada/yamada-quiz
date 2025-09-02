@@ -27,11 +27,11 @@ function getRandomQuizzes(quizzes: Quiz[], count: number) {
 }
 
 function generateItems() {
-  const rows = getRandomQuizzes(quizzes.row, 7);
+  const low = getRandomQuizzes(quizzes.low, 7);
   const middle = getRandomQuizzes(quizzes.middle, 7);
   const high = getRandomQuizzes(quizzes.high, 6);
 
-  return randomSort([...rows, ...middle, ...high]);
+  return randomSort([...low, ...middle, ...high]);
 }
 
 export default function Page() {
@@ -97,6 +97,7 @@ export default function Page() {
         <Button
           position='sticky'
           bottom='lg'
+          size='xl'
           onClick={() => {
             answers.current = [];
             setCurrentIndex(0);
@@ -117,12 +118,13 @@ export default function Page() {
           {question}
         </Heading>
 
-        <ButtonGroup.Root orientation='vertical' w='full' align='center'>
+        <ButtonGroup.Root orientation='vertical' w='full' align='center' size='xl'>
           <For each={randomSort(choices)}>
             {({ id, label }, index) => (
               <Button
                 key={`${currentIndex}-${index}`}
-                minW='calc(full / 3 * 2)'
+                minW='full'
+                _hover={{ bg: 'colorScheme.solid' }}
                 onClick={() => {
                   answers.current[currentIndex] = id;
 
@@ -143,7 +145,9 @@ export default function Page() {
     return (
       <>
         <Heading size='7xl'>Yamada Quiz</Heading>
-        <Button onClick={startControl.on}>スタート</Button>
+        <Button onClick={startControl.on} size='2xl'>
+          スタート
+        </Button>
       </>
     );
   }
